@@ -1,0 +1,36 @@
+# Upil — configuration.
+# Units ending in _ms are milliseconds, fractions are 0.0-1.0 (not percent).
+# Key names follow the evdev standard (see: python3 -c "from evdev import ecodes; print([k for k in dir(ecodes) if k.startswith('KEY_')])").
+
+trigger_key = "KEY_RIGHTALT"
+trigger_hold_ms = 0   # how long to hold before slide mode starts, in milliseconds. 0 = instant.
+
+[zones]
+top = 0.15      # strip width as a fraction (0.0-1.0)
+right = 0.15
+bottom = 0.15
+left = 0.15
+
+[mapping]
+# Which strip controls what. Choices: brightness, volume, seek, none.
+# At least one strip must not be none.
+top = "brightness"  # horizontal move
+right = "volume"    # vertical move
+bottom = "seek"     # horizontal move
+left = "none"       # vertical move
+
+[scale]
+brightness = 1.0    # a full-width fraction (1.0) means 100% brightness
+volume = 1.0        # a full-height fraction (1.0) means 100% volume
+seek_seconds = 300.0  # a full-width fraction (1.0) means this many seconds (fixed by design, not track length)
+
+[backend]
+# Drivers are explicit tool names. auto = use the tool when present, else disable that action.
+volume = "auto"       # auto | pipewire (via wpctl)
+brightness = "auto"   # auto | brightnessctl (via sysfs)
+
+[throttle]
+hz = 20           # max emit rate (keep at 30 or below: one call takes ~21ms)
+quantum = 0.005   # emit every 0.5% of accumulated change
+deadzone = 0.003  # ignore shakes below 0.3% of width/height
+max_jump = 0.25   # drop jumps >= 25% in one event (ghost/wet), reset baseline

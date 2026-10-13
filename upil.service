@@ -1,0 +1,13 @@
+[Unit]
+Description=Upil touchpad daemon (hold a trigger key, slide on touchpad zones)
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/yugi/Projects/upil/daemon.py --live
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
