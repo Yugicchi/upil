@@ -9,7 +9,7 @@ Tested on KDE Plasma and DankLinux ([DankMaterialShell](https://danklinux.com/))
 Other desktops are untested — see item 6 in [Background](#background).
 
 <p align="center">
-  <img src="demo.webp" alt="Upil brightness/volume gesture demo" width="608" />
+  <img src="demo.webp" alt="Upil brightness/volume gesture demo" width="400" />
 </p>
 
 ## Use Upil
