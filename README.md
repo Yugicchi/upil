@@ -8,6 +8,10 @@ touchpad to normal operation.
 Tested on KDE Plasma and DankLinux ([DankMaterialShell](https://danklinux.com/)).
 Other desktops are untested — see item 6 in [Background](#background).
 
+<p align="center">
+  <img src="demo.webp" alt="Upil brightness/volume gesture demo" width="608" />
+</p>
+
 ## Use Upil
 
 Hold `RightAlt` (the default trigger key), then slide along an edge:
